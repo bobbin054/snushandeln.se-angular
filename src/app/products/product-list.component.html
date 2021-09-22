@@ -1,0 +1,57 @@
+<div class="card ">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                Filter:
+                <input type='text'
+                       [(ngModel)]='listFilter'>
+            </div>
+        </div>
+        <div class="container">
+            <table class="table table-hover"
+                   *ngIf='products.length'>
+                <thead>
+                    <tr>
+                        <th>
+                            <button class='btn btn-primary'
+                                    (click)='toggleImage()'>
+                                {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
+                        </th>
+                        <th>Produkt</th>
+                        <th>Typ</th>
+                        <th>Pris</th>
+                        <th>Betyg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of filteredProducts' class='table-row' [routerLink]="['/products',product.productId]">
+                        
+                            <td>
+                                <img *ngIf="showImage"
+                                     [src]="product.imageUrl"
+                                     [title]="product.productName"
+                                     [style.width.px]='imageWidth'
+                                     [style.margin.px]='imageMargin'>
+                            </td>
+                            <td>
+
+                                {{product.productName}}
+                            </td>
+                            <td>{{product.snusType}}</td>
+                            <td>{{product.price | currency : 'SEK':'symbol':'1.2-2'}}</td>
+                            <td>
+                                <pm-star [rating]='product.starRating'
+                                         (ratingClicked)='onRatingClicked($event)'>
+                                </pm-star>
+                            </td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

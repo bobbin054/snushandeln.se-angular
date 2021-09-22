@@ -1,0 +1,52 @@
+[
+  {
+    "productId": 1,
+    "productName": "Ettan",
+    "snusType": "Portion",
+    "nicotineAmount": "8,5 mg/g",
+    "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
+    "price": 50,
+    "starRating": 4,
+    "imageUrl": "assets/images/leaf_rake.png"
+  },
+  {
+    "productId": 2,
+    "productName": "Grov",
+    "snusType": "Portion",
+    "nicotineAmount": "8,5 mg/g",
+    "description": "Görgött",
+    "price": 50,
+    "starRating": 4,
+    "imageUrl": "assets/images/leaf_rake.png"
+  },
+  {
+    "productId": 3,
+    "productName": "General",
+    "snusType": "Portion",
+    "nicotineAmount": "8,5 mg/g",
+    "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
+    "price": 50,
+    "starRating": 4,
+    "imageUrl": "assets/images/leaf_rake.png"
+  },
+  {
+    "productId": 4,
+    "productName": "Brunsnus",
+    "snusType": "Portion",
+    "nicotineAmount": "8,5 mg/g",
+    "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
+    "price": 50,
+    "starRating": 4,
+    "imageUrl": "assets/images/leaf_rake.png"
+  },
+  {
+    "productId": 5,
+    "productName": "Göteborgs Rapé",
+    "snusType": "Portion",
+    "nicotineAmount": "8,5 mg/g",
+    "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
+    "price": 50,
+    "starRating": 4,
+    "imageUrl": "assets/images/leaf_rake.png"
+  }
+]
