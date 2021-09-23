@@ -1,12 +1,17 @@
 export interface IProduct {
     "productId": number;
     "productName": string;
-    "snusType": string;
+    "type": string;
+    "nicotineLevel": string;
     "nicotineAmount": string;
-    "description": string;
+    "taste":string;
+    "contentWeight":number;
+    "contentWeightUnit":string;
     "price": number;
     "starRating": number;
     "imageUrl": string;
+    "producent":string
+    "description": string;
 }
 
 
