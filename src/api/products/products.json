@@ -5,9 +5,9 @@
     "snusType": "Portion",
     "nicotineAmount": "8,5 mg/g",
     "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
-    "price": 50,
-    "starRating": 4,
-    "imageUrl": "assets/images/leaf_rake.png"
+    "price": 45.90,
+    "starRating": 4.5,
+    "imageUrl": "assets/images/ettan-portionssnus.png"
   },
   {
     "productId": 2,
@@ -15,9 +15,9 @@
     "snusType": "Portion",
     "nicotineAmount": "8,5 mg/g",
     "description": "Görgött",
-    "price": 50,
-    "starRating": 4,
-    "imageUrl": "assets/images/leaf_rake.png"
+    "price": 48.5,
+    "starRating": 5,
+    "imageUrl": "https://media.snusbolaget.se/snusbolaget/images/swm-855-2020-07-27-093759394/555/555/0/grov-portionssnus.png"
   },
   {
     "productId": 3,
@@ -26,18 +26,8 @@
     "nicotineAmount": "8,5 mg/g",
     "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
     "price": 50,
-    "starRating": 4,
-    "imageUrl": "assets/images/leaf_rake.png"
-  },
-  {
-    "productId": 4,
-    "productName": "Brunsnus",
-    "snusType": "Portion",
-    "nicotineAmount": "8,5 mg/g",
-    "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
-    "price": 50,
-    "starRating": 4,
-    "imageUrl": "assets/images/leaf_rake.png"
+    "starRating": 3.2,
+    "imageUrl": "https://media.snusbolaget.se/snusbolaget/images/swm-880-2020-10-12-103510322/555/555/0/general-portionssnus.png"
   },
   {
     "productId": 5,
@@ -46,7 +36,7 @@
     "nicotineAmount": "8,5 mg/g",
     "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
     "price": 50,
-    "starRating": 4,
-    "imageUrl": "assets/images/leaf_rake.png"
+    "starRating": 3.5,
+    "imageUrl": "https://media.snusbolaget.se/snusbolaget/images/swm-874-2018-05-17-134527613/555/555/0/goteborgs-rape-white-portionssnus.png"
   }
 ]

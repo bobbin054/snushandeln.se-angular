@@ -18,12 +18,15 @@ import { SharedModule } from '../shared/shared.module';
       [
         { path: 'products', component: ProductListComponent },
         {
+          component: ProductDetailComponent,
           path: 'products/:id',
-          canActivate: [ProductDetailGuard],
-          component: ProductDetailComponent
+          canActivate: [ProductDetailGuard]
         },
       ]),
     SharedModule
   ]
 })
-export class ProductModule { }
+export class ProductModule { 
+
+  
+}

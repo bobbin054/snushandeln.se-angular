@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of filteredProducts' class='table-row' [routerLink]="['/products',product.productId]">
+                    <tr *ngFor='let product of filteredProducts' class='table-row align-baseline' [routerLink]="['/products',product.productId]">
                         
                             <td>
                                 <img *ngIf="showImage"

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from './product';
+import { ProductService } from './product.service';
 
 @Component({
   templateUrl: './product-detail.component.html',
@@ -9,14 +10,26 @@ import { IProduct } from './product';
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   product: IProduct | undefined;
+  prdId: Number | undefined;
+
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private ps: ProductService) { }
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.pageTitle += `: ${id}`;
+
+    this.prdId = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.pageTitle += `: ${this.prdId}`;
+
+    this.ps.getProducts().subscribe({
+      next: products => {
+        this.product = products.find(x => x.productId === this.prdId);
+      }
+    });
+
   }
-onBack():void{
-  this.router.navigate(['/products']);
-}
+  onBack(): void {
+    this.router.navigate(['/products']);
+  }
 }
