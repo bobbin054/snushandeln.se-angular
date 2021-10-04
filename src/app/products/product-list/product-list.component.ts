@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     }
 
     pageTitle: string = "Produkter";
-    
+
     imageWidth: number = 100;
     imageMargin: number = 2;
     showImage: boolean = true;

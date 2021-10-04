@@ -1,6 +1,6 @@
 {
   "files.autoSave": "afterDelay",
-  "html.format.wrapAttributes": "force-aligned",
+  "editor.formatOnSave": true,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "underline"
 }
