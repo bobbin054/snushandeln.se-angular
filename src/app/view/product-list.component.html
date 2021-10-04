@@ -26,10 +26,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of filteredProducts' class='table-row align-baseline' [routerLink]="['/products',product.productId]">
+                    <tr *ngFor='let product of filteredProducts' class='table-row align-baseline'
+                        >
 
-                        <td>
-                            <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName" [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
+                        <td [routerLink]="['/products',product.productId]">
+                            <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName"
+                                [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
                         </td>
                         <td>
 
@@ -41,7 +43,9 @@
                             <pm-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'>
                             </pm-star>
                         </td>
-                        <td>Add to cart</td>
+                        <td>
+                            <button class="btn btn-success"> Add to cart</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

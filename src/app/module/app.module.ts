@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { WelcomeComponent } from './home/welcome.component';
-import { ProductModule } from './products/product.module';
-import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
+import { AppComponent } from '../component/app.component';
+import { WelcomeComponent } from '../component/welcome.component';
+import { ProductModule } from './product.module';
+import { ShoppingCartModule } from './shopping-cart.module';
 
 @NgModule({
   declarations: [

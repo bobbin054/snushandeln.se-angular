@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, find, tap } from "rxjs/operators";
-import { IProduct } from "./product";
+import { IProduct } from "./interface/product";
 import { filter } from "rxjs/operators";
 
 @Injectable({

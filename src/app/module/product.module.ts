@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
-import { ConvertToSpacesPipe } from '../shared/convert-to-spaces.pipe';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ConvertToSpacesPipe } from '../convert-to-spaces.pipe';
+import { ProductDetailComponent } from '../component/product-detail.component';
+import { ProductListComponent } from '../component/product-list.component';
 import { RouterModule } from '@angular/router';
-import { ProductDetailGuard } from './product-detail/product-detail.guard';
-import { SharedModule } from '../shared/shared.module';
+import { ProductDetailGuard } from '../product-detail.guard';
+import { SharedModule } from './shared.module';
+import { ShoppingCartListComponent } from '../component/shopping-cart-list.component';
 
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
+    ShoppingCartListComponent,
     ConvertToSpacesPipe
   ],
   imports: [

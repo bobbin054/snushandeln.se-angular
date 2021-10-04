@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from '../product';
+import { IProduct } from '../interface/product';
 import { ProductService } from '../product.service';
 @Component({
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  templateUrl: '../view/product-detail.component.html',
+  styleUrls: ['../css/product-detail.component.css']
 })
 
 export class ProductDetailComponent implements OnInit {

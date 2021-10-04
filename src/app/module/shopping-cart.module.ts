@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ShoppingCartListComponent } from './shopping-cart-list.component';
+import { ShoppingCartListComponent } from '../component/shopping-cart-list.component';
 
 
 
