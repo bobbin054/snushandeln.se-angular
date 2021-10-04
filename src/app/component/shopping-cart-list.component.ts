@@ -7,8 +7,10 @@ import { ProductService } from "../product.service";
     templateUrl: '../view/shopping-cart-list.component.html',
     styleUrls: ['../css/shopping-cart-list.component.css']
 })
-export class ShoppingCartListComponent {
-    constructor() {
+export class ShoppingCartListComponent
+{
+    constructor()
+    {
     }
 
 

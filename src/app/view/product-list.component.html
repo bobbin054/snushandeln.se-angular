@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
-                Produktfilter:
+                Product filter:
                 <input type='text' [(ngModel)]='listFilter'>
             </div>
         </div>
@@ -18,18 +18,18 @@
                                 {{showImage ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
-                        <th>Produkt</th>
-                        <th>Typ</th>
-                        <th>Pris</th>
-                        <th>Betyg</th>
+                        <th>Product</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of filteredProducts' class='table-row align-baseline'
-                        >
+                    <tr *ngFor='let product of filteredProducts' class='table-row align-baseline'>
 
-                        <td [routerLink]="['/products',product.productId]">
+                        <td>
                             <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName"
                                 [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
                         </td>
@@ -44,7 +44,14 @@
                             </pm-star>
                         </td>
                         <td>
-                            <button class="btn btn-success"> Add to cart</button>
+                            <button [routerLink]="['/products', product.productId]" class="btn btn-secondary">
+                                Details
+                            </button>
+                        </td>
+                        <td>
+                            <button [routerLink]="['/shopping-cart', product.productId]" class="btn btn-success">
+                                Add to cart
+                            </button>
                         </td>
                     </tr>
                 </tbody>

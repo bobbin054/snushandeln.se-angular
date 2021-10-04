@@ -2,5 +2,9 @@
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "underline"
+  "terminal.integrated.cursorStyle": "underline",
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": true
 }

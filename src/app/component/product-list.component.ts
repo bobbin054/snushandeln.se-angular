@@ -7,41 +7,51 @@ import { ProductService } from "../product.service";
     templateUrl: '../view/product-list.component.html',
     styleUrls: ['../css/product-list.component.css']
 })
-export class ProductListComponent implements OnInit, OnDestroy {
-    constructor(private productService: ProductService) {
+export class ProductListComponent implements OnInit, OnDestroy
+{
+    constructor(private productService: ProductService)
+    {
     }
-
-    pageTitle: string = "Produkter";
-
-    imageWidth: number = 100;
-    imageMargin: number = 2;
-    showImage: boolean = true;
-    errorMessage: string = '';
-    sub!: Subscription;
-
+    public pageTitle: string = "Products";
+    public imageWidth: number = 100;
+    public imageMargin: number = 2;
+    public showImage: boolean = true;
+    public errorMessage: string = '';
+    public sub!: Subscription;
+    public filteredProducts: IProduct[] = [];
+    public products: IProduct[] = [];
+    
     private _listFilter: string = '';
-    get listFilter(): string {
+
+    get listFilter(): string
+    {
         return this._listFilter;
     }
-    set listFilter(value: string) {
+
+    set listFilter(value: string)
+    {
         this._listFilter = value;
         console.log('In setter:', value);
         this.filteredProducts = this.performFilter(value);
     }
-    filteredProducts: IProduct[] = [];
-    products: IProduct[] = [];
-    performFilter(filterBy: string): IProduct[] {
+
+    performFilter(filterBy: string): IProduct[]
+    {
         filterBy = filterBy.toLocaleLowerCase();
         return this.products.filter(
             (product: IProduct) => product.productName.toLocaleLowerCase().includes(filterBy));
     }
-    toggleImage(): void {
+
+    toggleImage(): void
+    {
         this.showImage = !this.showImage;
     }
 
-    ngOnInit(): void {
+    ngOnInit(): void
+    {
         this.sub = this.productService.getProducts().subscribe({
-            next: products => {
+            next: products =>
+            {
                 this.products = products;
                 this.filteredProducts = products;
             },
@@ -49,11 +59,13 @@ export class ProductListComponent implements OnInit, OnDestroy {
         });
     }
 
-    onRatingClicked(message: string): void {
+    onRatingClicked(message: string): void
+    {
         this.pageTitle = 'Product List: ' + message;
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy(): void
+    {
         this.sub.unsubscribe();
     }
 }

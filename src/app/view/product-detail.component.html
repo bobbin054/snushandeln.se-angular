@@ -14,46 +14,46 @@
         <table class="product-specs table table-hover ">
             <thead>
                 <tr>
-                    <th>Fakta om produkten</th>
+                    <th>Product facts</th>
                     <th class="text-right ">
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Varumärke</td>
+                    <td>Name</td>
                     <td>
                         {{product?.productName}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkttyp</td>
+                    <td>Product type</td>
                     <td>
                         {{product?.type}}
 
                     </td>
                 </tr>
                 <tr>
-                    <td>Nikotinhalt</td>
+                    <td>Nicotine amount</td>
                     <td>
                         {{product?.nicotineAmount}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Smak</td>
+                    <td>Taste</td>
                     <td>
                         {{product?.taste}}
 
                     </td>
                 </tr>
                 <tr>
-                    <td>Innehåll/förpackning</td>
+                    <td>Content weight</td>
                     <td>
                         {{product?.contentWeight}}{{product?.contentWeightUnit}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Producent</td>
+                    <td>Producer</td>
                     <td>{{product?.producent}}</td>
                 </tr>
             </tbody>
@@ -65,7 +65,7 @@
         <button class="btn btn-outline-secondary " style="width: 80px; " (click)="onBack() ">
 
             <i class="fa fa-chevron-left ">
-                Tillbaka
+                Back
             </i>
 
         </button>
