@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from '../product-detail.guard';
 import { SharedModule } from './shared.module';
 import { ShoppingCartListComponent } from '../component/shopping-cart-list.component';
+import { AddToCartComponent } from '../component/add-to-cart.component';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { ShoppingCartListComponent } from '../component/shopping-cart-list.compo
     ProductDetailComponent,
 
     ShoppingCartListComponent,
-
+    AddToCartComponent,
     ConvertToSpacesPipe
   ],
   imports: [

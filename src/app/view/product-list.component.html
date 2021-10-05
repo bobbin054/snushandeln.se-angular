@@ -42,7 +42,8 @@
                                 <td>{{product.type}}</td>
                                 <td>{{product.price | currency : 'SEK':'symbol':'1.2-2'}}</td>
                                 <td>
-                                    <pm-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'>
+                                    <pm-star [rating]='product.starRating'
+                                     (ratingClicked)='onRatingClicked($event)'>
                                     </pm-star>
                                 </td>
                                 <td>
@@ -51,9 +52,9 @@
                                     </button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-success" >
-                                        Add to cart
-                                    </button>
+                                    <add-to-cart [productToAdd]='product'
+                                        (addToCartClicked)='onAddToCartClicked($event)'>
+                                    </add-to-cart>
                                 </td>
                             </tr>
                         </tbody>
@@ -63,6 +64,6 @@
         </div>
     </div>
     <div class="col-4">
-        <shopping-cart-list-component></shopping-cart-list-component>
+        <shopping-cart-list></shopping-cart-list>
     </div>
 </div>

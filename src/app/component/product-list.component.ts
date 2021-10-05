@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit, OnDestroy
     public sub!: Subscription;
     public filteredProducts: IProduct[] = [];
     public products: IProduct[] = [];
-    
+
     private _listFilter: string = '';
 
     get listFilter(): string
@@ -57,6 +57,11 @@ export class ProductListComponent implements OnInit, OnDestroy
             },
             error: err => this.errorMessage = err
         });
+    }
+
+    onAddToCartClicked(message1: any): void
+    {
+        console.log("ProductListComponent: " + JSON.stringify(message1));
     }
 
     onRatingClicked(message: string): void

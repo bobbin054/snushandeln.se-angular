@@ -25,7 +25,7 @@ import { ShoppingCartListComponent } from '../component/shopping-cart-list.compo
     RouterModule.forRoot(
       [
         { path: 'welcome', component: WelcomeComponent },
-        { component: ShoppingCartListComponent, path: 'shopping-cart' },
+        {path: 'shopping-cart', component: ShoppingCartListComponent },
         { path: '', redirectTo: 'welcome', pathMatch: 'full' },
         { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
       ]),

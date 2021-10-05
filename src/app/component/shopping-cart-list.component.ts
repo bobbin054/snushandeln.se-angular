@@ -6,7 +6,7 @@ import { ProductService } from "../service/product.service";
 @Component({
     templateUrl: '../view/shopping-cart-list.component.html',
     styleUrls: ['../css/shopping-cart-list.component.css'],
-    selector: 'shopping-cart-list-component'
+    selector: 'shopping-cart-list'
 })
 export class ShoppingCartListComponent
 {
