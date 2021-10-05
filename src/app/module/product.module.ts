@@ -5,6 +5,7 @@ import { ProductListComponent } from '../component/product-list.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from '../product-detail.guard';
 import { SharedModule } from './shared.module';
+import { ShoppingCartListComponent } from '../component/shopping-cart-list.component';
 
 
 @NgModule({
@@ -12,6 +13,8 @@ import { SharedModule } from './shared.module';
     ProductListComponent,
 
     ProductDetailComponent,
+
+    ShoppingCartListComponent,
 
     ConvertToSpacesPipe
   ],
@@ -26,8 +29,8 @@ import { SharedModule } from './shared.module';
           component: ProductDetailComponent,
           path: 'products/:id',
           canActivate: [ProductDetailGuard]
-        }
-        
+        },
+        { component: ShoppingCartListComponent, path: 'shopping-cart/:id' },
       ]),
     SharedModule
   ]

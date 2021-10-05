@@ -11,7 +11,7 @@ import { ShoppingCartListComponent } from '../component/shopping-cart-list.compo
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingCartListComponent,
+
     WelcomeComponent,
 
   ],
