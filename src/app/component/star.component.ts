@@ -7,7 +7,8 @@ import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core
     styleUrls: ['../css/star.component.css']
 })
 
-export class StarComponent implements OnChanges {
+export class StarComponent implements OnChanges
+{
 
     @Input() rating: number = 0;
 
@@ -16,11 +17,13 @@ export class StarComponent implements OnChanges {
 
     cropWidth: number = 75;
 
-    ngOnChanges(): void {
+    ngOnChanges(): void
+    {
         this.cropWidth = this.rating * 75 / 5;
     }
 
-    onClick(): void {
+    onClick(): void
+    {
         this.ratingClicked.emit(this.rating.toString());
     }
 }

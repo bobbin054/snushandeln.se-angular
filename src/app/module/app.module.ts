@@ -6,12 +6,12 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from '../component/app.component';
 import { WelcomeComponent } from '../component/welcome.component';
 import { ProductModule } from './product.module';
-import { ShoppingCartModule } from './shopping-cart.module';
+import { ShoppingCartListComponent } from '../component/shopping-cart-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    ShoppingCartListComponent,
     WelcomeComponent,
 
   ],
@@ -22,11 +22,10 @@ import { ShoppingCartModule } from './shopping-cart.module';
 
     ProductModule,
 
-    ShoppingCartModule,
-
     RouterModule.forRoot(
       [
         { path: 'welcome', component: WelcomeComponent },
+        { component: ShoppingCartListComponent, path: 'shopping-cart' },
         { path: '', redirectTo: 'welcome', pathMatch: 'full' },
         { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
       ]),

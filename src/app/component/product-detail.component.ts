@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from '../interface/product';
-import { ProductService } from '../product.service';
+import { ProductService } from '../service/product.service';
 @Component({
   templateUrl: '../view/product-detail.component.html',
   styleUrls: ['../css/product-detail.component.css']
@@ -11,7 +11,7 @@ export class ProductDetailComponent implements OnInit
 {
   pageTitle: string = 'Product Detail';
   product: IProduct | undefined;
-  prdId: Number | undefined;
+  productId: Number | undefined;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -22,15 +22,14 @@ export class ProductDetailComponent implements OnInit
 
   ngOnInit(): void
   {
+    this.productId = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.prdId = Number(this.route.snapshot.paramMap.get('id'));
-
-    this.pageTitle += `: ${this.prdId}`;
+    this.pageTitle += `: ${this.productId}`;
 
     this.productService.getProducts().subscribe({
       next: products =>
       {
-        this.product = products.find(x => x.productId === this.prdId);
+        this.product = products.find(x => x.productId === this.productId);
       }
     });
 

@@ -1,1 +1,4 @@
 <h1>Shopping cart</h1>
+<pre>{{product | json}}</pre>
+<img *ngIf="product" [src]="product.imageUrl" [title]="product.productName"
+                                [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
