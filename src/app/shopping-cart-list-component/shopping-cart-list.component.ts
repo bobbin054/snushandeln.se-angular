@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IProduct } from "../interface/product";
-import { ProductService } from "../service/product.service";
+import { ProductService } from "../product/product.service";
 
 @Component({
-    templateUrl: '../view/shopping-cart-list.component.html',
-    styleUrls: ['../css/shopping-cart-list.component.css'],
+    templateUrl: './shopping-cart-list.component.html',
+    styleUrls: ['./shopping-cart-list.component.css'],
     selector: 'shopping-cart-list'
 })
 export class ShoppingCartListComponent
@@ -19,7 +19,7 @@ export class ShoppingCartListComponent
         private router: Router,
         private productService: ProductService)
       {
-    
+
       }
 
     ngOnInit(): void

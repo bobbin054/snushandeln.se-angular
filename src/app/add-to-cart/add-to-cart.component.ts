@@ -3,10 +3,10 @@ import { IProduct } from "../interface/product";
 
 @Component({
     selector: 'add-to-cart',
-    templateUrl: '../view/add-to-cart.component.html'
+    templateUrl: './add-to-cart.component.html'
 })
 
-export class AddToCartComponent 
+export class AddToCartComponent
 {
     @Input() productToAdd!: IProduct;
     @Output() addToCartClicked: EventEmitter<IProduct> = new EventEmitter<IProduct>();

@@ -22,7 +22,7 @@ export class ProductService {
     prd: IProduct[] | undefined;
     // getProduct(id: number): Observable<IProduct> {
     //     const src$ = this.http.get<IProduct[]>(this.productUrl).pipe(
-            
+
     //     );
 
     //     return result!;
