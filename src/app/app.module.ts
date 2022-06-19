@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome.component';
+import { WelcomeComponent } from './welcome-component/welcome.component';
 import { ProductModule } from './product/product.module';
 import { ShoppingCartListComponent } from './shopping-cart-list-component/shopping-cart-list.component';
 
