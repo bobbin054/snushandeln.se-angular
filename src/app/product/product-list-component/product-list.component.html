@@ -16,7 +16,11 @@
             <thead>
               <tr>
                 <th>
-                  <button type="button" class="btn btn-primary" (click)="toggleImage()">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="toggleImage()"
+                  >
                     {{ showImage ? "Hide" : "Show" }} Image
                   </button>
                 </th>
@@ -58,11 +62,11 @@
                 </td>
 
                 <td>
-                  <add-to-cart
+                  <!-- <add-to-cart
                     [productToAdd]="product"
                     (addToCartClicked)="onAddToCartClicked($event)"
                   >
-                  </add-to-cart>
+                  </add-to-cart> -->
                 </td>
               </tr>
             </tbody>
@@ -71,7 +75,5 @@
       </div>
     </div>
   </div>
-  <div class="col-4">
-    <shopping-cart-list></shopping-cart-list>
-  </div>
+  
 </div>

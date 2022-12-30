@@ -4,9 +4,6 @@ import { ProductDetailComponent } from './product-detail-component/product-detai
 import { ProductListComponent } from './product-list-component/product-list.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './product-detail.guard';
-import { ShoppingCartListComponent } from '../shopping-cart-list-component/shopping-cart-list.component';
-import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared.module';
 
@@ -14,8 +11,6 @@ import { SharedModule } from '../shared.module';
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    ShoppingCartListComponent,
-    AddToCartComponent,
     ConvertToSpacesPipe,
   ],
   imports: [
@@ -29,16 +24,10 @@ import { SharedModule } from '../shared.module';
         path: 'products/:id',
         canActivate: [ProductDetailGuard],
       },
-      { component: ShoppingCartListComponent, path: 'shopping-cart/:id' },
     ]),
     CommonModule,
     SharedModule,
   ],
-  exports: [
-    ProductListComponent,
-    ProductDetailComponent,
-    
-    AddToCartComponent,
-  ],
+  exports: [ProductListComponent, ProductDetailComponent],
 })
 export class ProductModule {}
