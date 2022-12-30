@@ -4,9 +4,9 @@ import { IProduct } from '../interface/product';
 import { ProductService } from '../product/product.service';
 
 @Component({
+  selector: 'pm-shopping-cart-list',
   templateUrl: './shopping-cart-list.component.html',
   styleUrls: ['./shopping-cart-list.component.css'],
-  selector: 'shopping-cart-list',
 })
 export class ShoppingCartListComponent {
   pageTitle: string = 'Product Detail';
