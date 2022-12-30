@@ -9,28 +9,18 @@ import { ProductModule } from './product/product.module';
 import { ShoppingCartListComponent } from './shopping-cart-list-component/shopping-cart-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-    WelcomeComponent,
-
-  ],
+  declarations: [AppComponent, WelcomeComponent],
   imports: [
     BrowserModule,
-
     HttpClientModule,
-
     ProductModule,
-
-    RouterModule.forRoot(
-      [
-        { path: 'welcome', component: WelcomeComponent },
-        {path: 'shopping-cart', component: ShoppingCartListComponent },
-        { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-        { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
-      ]),
-
+    RouterModule.forRoot([
+      { path: 'welcome', component: WelcomeComponent },
+      { path: 'shopping-cart', component: ShoppingCartListComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+    ]),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
