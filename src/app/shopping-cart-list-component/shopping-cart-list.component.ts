@@ -9,9 +9,9 @@ import { ProductService } from '../product/product.service';
   styleUrls: ['./shopping-cart-list.component.scss'],
 })
 export class ShoppingCartListComponent {
-  pageTitle: string = 'Product Detail';
-  product: IProduct | undefined;
-  productId: number | undefined;
+  public pageTitle: string = 'Product Detail';
+  public product: IProduct | undefined;
+  public productId: number | undefined;
   public imageWidth: number = 100;
   public imageMargin: number = 2;
   constructor(
