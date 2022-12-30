@@ -31,7 +31,6 @@ import { SharedModule } from '../shared.module';
       },
       { component: ShoppingCartListComponent, path: 'shopping-cart/:id' },
     ]),
-    FormsModule,
     CommonModule,
     SharedModule,
   ],
