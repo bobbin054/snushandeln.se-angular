@@ -1,8 +1,14 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
-  <a [routerLink]="['/welcome']" class="navbar-brand text-success " style="margin-left: 10px; "> {{pageTitle}} </a>
+  <a
+    [routerLink]="['/welcome']"
+    class="navbar-brand text-success"
+    style="margin-left: 10px"
+  >
+    {{ pageTitle }}
+  </a>
   <ul class="nav nav-pills">
     <li>
-      <a class="nav-link" [routerLink]="['/products']">Snus</a>
+      <a class="nav-link" [routerLink]="['/shop']">Snus</a>
     </li>
     <li>
       <a class="nav-link" [routerLink]="['/shopping-cart']">Shopping Cart</a>
@@ -11,5 +17,4 @@
 </nav>
 <div class="container-fluid m-4">
   <router-outlet></router-outlet>
-  
 </div>
