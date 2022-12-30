@@ -6,7 +6,7 @@ import { ProductService } from '../product/product.service';
 @Component({
   selector: 'pm-shopping-cart-list',
   templateUrl: './shopping-cart-list.component.html',
-  styleUrls: ['./shopping-cart-list.component.css'],
+  styleUrls: ['./shopping-cart-list.component.scss'],
 })
 export class ShoppingCartListComponent {
   pageTitle: string = 'Product Detail';

@@ -4,7 +4,7 @@ import { IProduct } from '../../interface/product';
 import { ProductService } from '../product.service';
 @Component({
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.scss']
 })
 
 export class ProductDetailComponent implements OnInit

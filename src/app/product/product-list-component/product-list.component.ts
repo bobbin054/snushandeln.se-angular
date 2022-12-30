@@ -6,7 +6,7 @@ import { ProductService } from '../product.service';
 @Component({
   selector: 'pm-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   constructor(private productService: ProductService) {}
