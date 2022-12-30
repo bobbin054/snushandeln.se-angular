@@ -4,6 +4,7 @@ import { IProduct } from '../../interface/product';
 import { ProductService } from '../product.service';
 
 @Component({
+  selector: 'pm-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
@@ -17,7 +18,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
   public sub!: Subscription;
   public filteredProducts: IProduct[] = [];
   public products: IProduct[] = [];
-
   private _listFilter: string = '';
 
   get listFilter(): string {

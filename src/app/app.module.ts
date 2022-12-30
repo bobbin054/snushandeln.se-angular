@@ -2,19 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome-component/welcome.component';
 import { ProductModule } from './product/product.module';
 import { ShoppingCartListComponent } from './shopping-cart-list-component/shopping-cart-list.component';
 import { ShopComponent } from './shop/shop.component';
+import { SharedModule } from './shared.module';
+import { ShopModule } from './shop/shop.module';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent,ShopComponent],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
   imports: [
+    SharedModule,
     BrowserModule,
     HttpClientModule,
-    ProductModule,
+    ShopModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'shop', component: ShopComponent },
@@ -23,6 +26,5 @@ import { ShopComponent } from './shop/shop.component';
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
     ]),
   ],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,9 +4,11 @@ import { ProductDetailComponent } from './product-detail-component/product-detai
 import { ProductListComponent } from './product-list-component/product-list.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './product-detail.guard';
-import { SharedModule } from '../shared.module';
 import { ShoppingCartListComponent } from '../shopping-cart-list-component/shopping-cart-list.component';
 import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,15 @@ import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
       },
       { component: ShoppingCartListComponent, path: 'shopping-cart/:id' },
     ]),
+    FormsModule,
+    CommonModule,
     SharedModule,
+  ],
+  exports: [
+    ProductListComponent,
+    ProductDetailComponent,
+    ShoppingCartListComponent,
+    AddToCartComponent,
   ],
 })
 export class ProductModule {}
