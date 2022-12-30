@@ -37,7 +37,7 @@ import { SharedModule } from '../shared.module';
   exports: [
     ProductListComponent,
     ProductDetailComponent,
-    ShoppingCartListComponent,
+    
     AddToCartComponent,
   ],
 })
