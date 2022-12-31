@@ -8,12 +8,14 @@ import { CartComponent } from './components/cart/cart.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ShopModule } from './components/shop/shop.module';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     ShopModule,
     FormsModule,

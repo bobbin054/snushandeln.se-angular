@@ -1,7 +1,9 @@
 <h1>Shopping cart</h1>
+
+<div *ngFor="let product of products">product: {{ product.productName }}</div>
 <!-- <pre>{{ product | json }}</pre> -->
 <!-- <img
-  *ngIf="product && product.imageUrl && product.productName"
+  *ngIf="product"
   [src]="product.imageUrl"
   [title]="product.productName"
   [style.width.px]="imageWidth"

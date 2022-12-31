@@ -6,6 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { ShopService } from 'src/app/services/shop.service';
 import { IProduct } from './../../../interface/product';
 import { ProductService } from './../../../services/product.service';
 @Component({
@@ -14,7 +15,10 @@ import { ProductService } from './../../../services/product.service';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  constructor(private productService: ProductService) {}
+  constructor(
+    private _productService: ProductService,
+    private _shop: ShopService
+  ) {}
   public pageTitle: string = 'Products';
   public imageWidth: number = 100;
   public imageMargin: number = 2;
@@ -25,7 +29,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
   public products: IProduct[] = [];
   private _listFilter: string = '';
 
-  @Output() addToCartClicked = new EventEmitter<IProduct>();
 
   get listFilter(): string {
     return this._listFilter;
@@ -49,7 +52,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.sub = this.productService.getProducts().subscribe({
+    this.sub = this._productService.getProducts().subscribe({
       next: (products) => {
         this.products = products;
         this.filteredProducts = products;
@@ -71,7 +74,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   handleAddToCart(product: IProduct) {
-    console.log('handleAddToCart: ' + JSON.stringify(product));
-    this.addToCartClicked.emit(product);
+    this._shop.addToCart(product);
   }
 }
