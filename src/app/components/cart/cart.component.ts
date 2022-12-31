@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from '../../interface/product';
-import { ProductService } from '../product.service';
-@Component({
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss'],
-})
-export class ProductDetailComponent implements OnInit {
-  pageTitle: string = 'Product Detail';
-  product: IProduct | undefined;
-  productId: Number | undefined;
+import { ProductService } from '../../services/product.service';
 
+@Component({
+  selector: 'pm-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss'],
+})
+export class CartComponent {
+  public pageTitle: string = 'Product Detail';
+  public product: IProduct | undefined;
+  public productId: number | undefined;
+  public imageWidth: number = 100;
+  public imageMargin: number = 2;
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private productService: ProductService
   ) {}
 
@@ -25,9 +27,5 @@ export class ProductDetailComponent implements OnInit {
         this.product = products.find((x) => x.productId === this.productId);
       },
     });
-  }
-  
-  onBack(): void {
-    this.router.navigate(['/products']);
   }
 }

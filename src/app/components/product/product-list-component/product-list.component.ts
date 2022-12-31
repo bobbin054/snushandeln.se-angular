@@ -6,9 +6,8 @@ import {
   Output,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { IProduct } from '../../interface/product';
-import { ProductService } from '../product.service';
-
+import { IProduct } from './../../../interface/product';
+import { ProductService } from './../../../services/product.service';
 @Component({
   selector: 'pm-product-list',
   templateUrl: './product-list.component.html',

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from '../interface/product';
-import { ProductService } from '../product/product.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'pm-cart',

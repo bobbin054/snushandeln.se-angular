@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome-component/welcome.component';
-import { CartComponent } from './cart/cart.component';
-import { ShopComponent } from './shop/shop.component';
+import { WelcomeComponent } from './components/welcome-component/welcome.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ShopComponent } from './components/shop/shop.component';
 import { SharedModule } from './shared.module';
-import { ShopModule } from './shop/shop.module';
+import { ShopModule } from './components/shop/shop.module';
 
 @NgModule({
   declarations: [AppComponent],

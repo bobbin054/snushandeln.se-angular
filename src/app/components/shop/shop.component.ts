@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProduct } from '../interface/product';
+import { IProduct } from '../../interface/product';
 
 @Component({
   templateUrl: './shop.component.html',
