@@ -6,17 +6,17 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome-component/welcome.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ShopComponent } from './components/shop/shop.component';
-import { SharedModule } from './shared.module';
 import { ShopModule } from './components/shop/shop.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
   bootstrap: [AppComponent],
   imports: [
-    SharedModule,
     BrowserModule,
     HttpClientModule,
     ShopModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'shop', component: ShopComponent },

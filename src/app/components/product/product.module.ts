@@ -5,13 +5,15 @@ import { ProductListComponent } from './product-list-component/product-list.comp
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from '../../guards/product-detail.guard';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../../shared.module';
+import { StarComponent } from '../star-component/star.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
     ConvertToSpacesPipe,
+    StarComponent,
   ],
   imports: [
     RouterModule.forChild([
@@ -26,7 +28,7 @@ import { SharedModule } from '../../shared.module';
       },
     ]),
     CommonModule,
-    SharedModule,
+    FormsModule,
   ],
   exports: [ProductListComponent, ProductDetailComponent],
 })
