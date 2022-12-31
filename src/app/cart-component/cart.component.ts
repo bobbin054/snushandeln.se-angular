@@ -4,11 +4,11 @@ import { IProduct } from '../interface/product';
 import { ProductService } from '../product/product.service';
 
 @Component({
-  selector: 'pm-shopping-cart',
-  templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.scss'],
+  selector: 'pm-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss'],
 })
-export class ShoppingCartComponent {
+export class CartComponent {
   public pageTitle: string = 'Product Detail';
   public product: IProduct | undefined;
   public productId: number | undefined;
