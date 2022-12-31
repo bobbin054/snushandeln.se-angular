@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome-component/welcome.component';
-import { ShoppingCartListComponent } from './shopping-cart-list-component/shopping-cart-list.component';
+import { ShoppingCartComponent } from './shopping-cart-component/shopping-cart.component';
 import { ShopComponent } from './shop/shop.component';
 import { SharedModule } from './shared.module';
 import { ShopModule } from './shop/shop.module';
@@ -20,7 +20,7 @@ import { ShopModule } from './shop/shop.module';
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'shop', component: ShopComponent },
-      { path: 'shopping-cart', component: ShoppingCartListComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
     ]),
