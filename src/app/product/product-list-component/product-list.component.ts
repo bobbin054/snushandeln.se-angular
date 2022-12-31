@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IProduct } from '../../interface/product';
 import { ProductService } from '../product.service';
@@ -19,6 +25,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
   public filteredProducts: IProduct[] = [];
   public products: IProduct[] = [];
   private _listFilter: string = '';
+
+  @Output() addToCartClicked = new EventEmitter<IProduct>();
 
   get listFilter(): string {
     return this._listFilter;
@@ -61,5 +69,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+  }
+
+  handleAddToCart(product: IProduct) {
+    console.log('handleAddToCart: ' + JSON.stringify(product));
+    this.addToCartClicked.emit(product);
   }
 }
