@@ -10,11 +10,8 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit, OnDestroy {
-  public pageTitle: string = 'Product Detail';
   public products: IProduct[] = [];
   public productId: number | undefined;
-  public imageWidth: number = 100;
-  public imageMargin: number = 2;
   constructor(
     private _route: ActivatedRoute,
     private _productService: ProductService,
@@ -23,8 +20,6 @@ export class CartComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.productId = Number(this._route.snapshot.paramMap.get('id'));
-    this.pageTitle += `: ${this.productId}`;
-
     this._shopService.$productItemChanged.subscribe((product) => {
       this.products.push(product);
     });
