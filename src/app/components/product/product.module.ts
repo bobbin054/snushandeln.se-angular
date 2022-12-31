@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ConvertToSpacesPipe } from '../../convert-to-spaces.pipe';
+import { ConvertToSpacesPipe } from '../../pipes/convert-to-spaces.pipe';
 import { ProductDetailComponent } from './product-detail-component/product-detail.component';
 import { ProductListComponent } from './product-list-component/product-list.component';
 import { RouterModule } from '@angular/router';
