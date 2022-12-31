@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ProductModule } from '../product/product.module';
-import { CartComponent } from '../cart-component/cart.component';
+import { CartComponent } from '../cart/cart.component';
 import { ShopComponent } from './shop.component';
 
 @NgModule({
