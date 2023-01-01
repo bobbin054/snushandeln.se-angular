@@ -1,15 +1,28 @@
-<h1>Shopping cart</h1>
-
-<div *ngFor="let product of productMap | keyvalue">
-  {{ product.key }} quanity: {{ product.value.length }}
-
-  <!-- <img
-    *ngIf="product"
-    [src]="product.imageUrl"
-    [title]="product.productName"
-    [style.width.px]="100"
-    [style.margin.px]="2"
-  />
-  product: {{ product.productName }} -->
+<div class="card">
+  <div class="card-header">Cart</div>
+  <div class="card-body">
+    <table class="table table-hover" *ngIf="productMap">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Type</th>
+          <!-- <th>Price</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let product of productMap | keyvalue"
+          class="table-row align-baseline"
+        >
+          <td>
+            {{ product.key }}
+          </td>
+          <td>{{ product.value }}</td>
+          <!-- <td>
+            {{ product.price | currency : "SEK" : "symbol" : "1.2-2" }}
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<!-- <pre>{{ product | json }}</pre> -->

@@ -10,9 +10,11 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit, OnDestroy {
-  public products: IProduct[] = [];
   public productId: number | undefined;
   public productMap: Map<string, IProduct[]> = new Map();
+  public getProductByKey(key: string) {
+    return this.productMap.get(key);
+  }
 
   constructor(
     private _route: ActivatedRoute,
@@ -22,6 +24,7 @@ export class CartComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // this.productId = Number(this._route.snapshot.paramMap.get('id'));
+    this.productMap.keys()
     this._shopService.$productItemChanged.subscribe({
       next: (product) => {
         let alreadyAddedProducts = this.productMap.get(product.productName);
