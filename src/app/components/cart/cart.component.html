@@ -5,7 +5,8 @@
       <thead>
         <tr>
           <th>Product</th>
-          <th>Type</th>
+          <th>Quantity</th>
+          <th>Price</th>
           <!-- <th>Price</th> -->
         </tr>
       </thead>
@@ -17,7 +18,8 @@
           <td>
             {{ product.key }}
           </td>
-          <td>{{ product.value }}</td>
+          <td>{{ product.value.length }}</td>
+          <td>{{ product.value | sum : "price" }}</td>
           <!-- <td>
             {{ product.price | currency : "SEK" : "symbol" : "1.2-2" }}
           </td> -->
