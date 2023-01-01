@@ -1,13 +1,15 @@
 <h1>Shopping cart</h1>
 
-<div *ngFor="let product of products">
-  <img
-  *ngIf="product"
-  [src]="product.imageUrl"
-  [title]="product.productName"
-  [style.width.px]="100"
-  [style.margin.px]="2"
-/>
-  product: {{ product.productName }}</div>
-<!-- <pre>{{ product | json }}</pre> -->
+<div *ngFor="let product of productMap | keyvalue">
+  {{ product.key }} quanity: {{ product.value.length }}
 
+  <!-- <img
+    *ngIf="product"
+    [src]="product.imageUrl"
+    [title]="product.productName"
+    [style.width.px]="100"
+    [style.margin.px]="2"
+  />
+  product: {{ product.productName }} -->
+</div>
+<!-- <pre>{{ product | json }}</pre> -->
