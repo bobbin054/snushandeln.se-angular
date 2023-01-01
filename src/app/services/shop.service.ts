@@ -13,4 +13,5 @@ export class ShopService {
   public addToCart(product: IProduct): void {
     this.$productItemChanged.next(product);
   }
+  //https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject
 }
