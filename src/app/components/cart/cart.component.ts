@@ -50,6 +50,14 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     this.productsInCart = this.productsInCart.filter((p) => p !== product);
   }
 
+  public increaseQuantity(product: IProductInCart): void {
+    product.quantity++;
+  }
+
+  public decreaseQuantity(product: IProductInCart): void {
+    product.quantity--;
+  }
+
   public getTotalPrice(): number {
     return this.productsInCart.reduce(
       (prev, curr) => prev + curr.price * curr.quantity,

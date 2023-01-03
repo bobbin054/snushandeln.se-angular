@@ -3,7 +3,7 @@ import { IProduct } from '../../interface/product';
 
 @Component({
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css'],
+  styleUrls: ['./shop.component.scss'],
 })
 export class ShopComponent {
   public shoppingCartItems: IProduct[] = [];
