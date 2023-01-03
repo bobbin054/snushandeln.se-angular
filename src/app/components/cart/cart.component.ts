@@ -47,7 +47,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
   }
 
   public removeFromCart(product: IProductInCart): void {
-    product.quantity--;
+    this.productsInCart = this.productsInCart.filter((p) => p !== product);
   }
 
   public getTotalPrice(): number {
