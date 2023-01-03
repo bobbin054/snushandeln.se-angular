@@ -15,7 +15,7 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
+export class CartComponent implements OnInit, OnDestroy {
   public productId: number | undefined;
   public productsInCart: IProductInCart[] = [];
 
@@ -57,20 +57,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
   public removeFromCart(product: IProductInCart): void {
     product.quantity--;
-  }
-
-  ngAfterContentChecked(): void {
-    this.productsInCart
-      .filter((p) => p.quantity <= 0)
-      .map((p) => {
-        const index = this.productsInCart.findIndex(
-          (p) => p.productName === p.productName
-        );
-        if (index > -1) {
-          console.log('index', index);
-          this.productsInCart.splice(index, 1);
-        }
-      });
+    this.productsInCart = this.productsInCart.filter((p) => p.quantity > 0);
   }
 
   public getTotalPrice(): number {
