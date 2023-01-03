@@ -13,3 +13,7 @@ export interface IProduct {
   producent: string;
   description: string;
 }
+
+export interface IProductInCart extends IProduct {
+  quantity: number;
+}

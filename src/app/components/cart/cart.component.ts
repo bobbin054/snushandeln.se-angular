@@ -1,7 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterViewChecked,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ShopService } from 'src/app/services/shop.service';
-import { IProduct } from '../../interface/product';
+import { IProduct, IProductInCart } from '../../interface/product';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -9,12 +15,9 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
   public productId: number | undefined;
-  public productMap: Map<string, IProduct[]> = new Map();
-  public getProductByKey(key: string) {
-    return this.productMap.get(key);
-  }
+  public productsInCart: IProductInCart[] = [];
 
   constructor(
     private _route: ActivatedRoute,
@@ -24,20 +27,56 @@ export class CartComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // this.productId = Number(this._route.snapshot.paramMap.get('id'));
-    this.productMap.keys()
+
     this._shopService.$productItemChanged.subscribe({
       next: (product) => {
-        let alreadyAddedProducts = this.productMap.get(product.productName);
-        if (alreadyAddedProducts && alreadyAddedProducts.length > 0) {
-          alreadyAddedProducts.push(product);
+        const alreadyAddedProduct = this.productsInCart.find(
+          (p) => p.productName === product.productName
+        );
+        if (alreadyAddedProduct) {
+          alreadyAddedProduct.quantity++;
         } else {
-          this.productMap.set(product.productName, [product]);
+          this.productsInCart.push({ ...product, quantity: 1 });
         }
       },
     });
   }
 
+  public onRemoveProduct(product: IProductInCart): void {
+    const index = this.productsInCart.findIndex(
+      (p) => p.productName === product.productName
+    );
+    if (index > -1) {
+      this.productsInCart.splice(index, 1);
+    }
+  }
+
   ngOnDestroy(): void {
     this._shopService.$productItemChanged.unsubscribe();
+  }
+
+  public removeFromCart(product: IProductInCart): void {
+    product.quantity--;
+  }
+
+  ngAfterContentChecked(): void {
+    this.productsInCart
+      .filter((p) => p.quantity <= 0)
+      .map((p) => {
+        const index = this.productsInCart.findIndex(
+          (p) => p.productName === p.productName
+        );
+        if (index > -1) {
+          console.log('index', index);
+          this.productsInCart.splice(index, 1);
+        }
+      });
+  }
+
+  public getTotalPrice(): number {
+    return this.productsInCart.reduce(
+      (prev, curr) => prev + curr.price * curr.quantity,
+      0
+    );
   }
 }

@@ -1,30 +1,46 @@
 <div class="card">
   <div class="card-header">Cart</div>
   <div class="card-body">
-    <table class="table table-hover" *ngIf="productMap">
+    <table class="table table-hover" *ngIf="productsInCart">
       <thead>
         <tr>
           <th>Product</th>
           <th>Quantity</th>
-          <th>Price</th>
-          <!-- <th>Price</th> -->
+          <th>á price</th>
+          <th>Sum</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr
-          *ngFor="let product of productMap | keyvalue"
+          *ngFor="let productInCart of productsInCart"
           class="table-row align-baseline"
         >
           <td>
-            {{ product.key }}
+            {{ productInCart.productName }}
           </td>
-          <td>{{ product.value.length }}</td>
-          <td>{{ product.value | sum : "price" }}</td>
-          <!-- <td>
-            {{ product.price | currency : "SEK" : "symbol" : "1.2-2" }}
-          </td> -->
+          <td>{{ productInCart.quantity }}</td>
+          <td>
+            {{ productInCart.price }}
+          </td>
+          <td>{{ productInCart.price * productInCart.quantity }}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="removeFromCart(productInCart)"
+            >
+              X
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
+    <div class="alert alert-info" *ngIf="productsInCart.length <= 0">
+      Your cart is empty
+    </div>
+    <div class="alert alert-success" *ngIf="productsInCart.length > 0">
+      Total: {{ getTotalPrice() }}
+    </div>
   </div>
 </div>
