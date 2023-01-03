@@ -42,15 +42,6 @@ export class CartComponent implements OnInit, OnDestroy {
     });
   }
 
-  public onRemoveProduct(product: IProductInCart): void {
-    const index = this.productsInCart.findIndex(
-      (p) => p.productName === product.productName
-    );
-    if (index > -1) {
-      this.productsInCart.splice(index, 1);
-    }
-  }
-
   ngOnDestroy(): void {
     this._shopService.$productItemChanged.unsubscribe();
   }
