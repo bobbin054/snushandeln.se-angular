@@ -19,7 +19,7 @@
           <td>
             {{ productInCart.productName }}
           </td>
-          <td>{{ productInCart.quantity }}</td>
+          <td> <input type="number" name="quantity" id="quantityId" [(ngModel)]="productInCart.quantity"> </td>
           <td>
             {{ productInCart.price }}
           </td>

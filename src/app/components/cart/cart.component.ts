@@ -15,7 +15,7 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
   public productId: number | undefined;
   public productsInCart: IProductInCart[] = [];
 
@@ -48,7 +48,6 @@ export class CartComponent implements OnInit, OnDestroy {
 
   public removeFromCart(product: IProductInCart): void {
     product.quantity--;
-    this.productsInCart = this.productsInCart.filter((p) => p.quantity > 0);
   }
 
   public getTotalPrice(): number {
@@ -56,5 +55,9 @@ export class CartComponent implements OnInit, OnDestroy {
       (prev, curr) => prev + curr.price * curr.quantity,
       0
     );
+  }
+
+  ngAfterContentChecked(): void {
+    this.productsInCart = this.productsInCart.filter((p) => p.quantity > 0);
   }
 }
