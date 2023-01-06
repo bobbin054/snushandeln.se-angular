@@ -1,8 +1,4 @@
 .shop {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  box-sizing: border-box;
-  gap: 8px;
-  padding: 16px;
+  &__product-list {
+  }
 }

@@ -2,7 +2,7 @@
   {
     "productId": 1,
     "productName": "Ettan",
-    "type": "Orginal portion",
+    "type": "Portion",
     "nicotineAmount": "8,5 mg/g",
     "description": "Ettan Portion är ett portionssnus med en traditionell tobakssmak. Fyllig, robust och lätt rökig. Ettan är tradition.",
     "price": 45.9,
@@ -45,7 +45,7 @@
     "producent": "Swedish Match"
   },
   {
-    "productId": 5,
+    "productId": 4,
     "productName": "Göteborgs Rapé",
     "type": "Portion",
     "nicotineAmount": "8,5 mg/g",
@@ -53,6 +53,21 @@
     "price": 50,
     "starRating": 3.5,
     "imageUrl": "https://media.snusbolaget.se/snusbolaget/images/swm-874-2018-05-17-134527613/555/555/0/goteborgs-rape-white-portionssnus.png",
+    "nicotineLevel": "8.5mg/g",
+    "taste": "Traditionell",
+    "contentWeight": "24",
+    "contentWeightUnit": "g",
+    "producent": "Swedish Match"
+  },
+  {
+    "productId": 4,
+    "productName": "Röda Lacket",
+    "type": "Portion",
+    "nicotineAmount": "8,5 mg/g",
+    "description": "50% snus, 45% jenkasmak 5% barrsmak",
+    "price": 67.49,
+    "starRating": 3.5,
+    "imageUrl": "https://media.snusbolaget.se/snusbolaget/images/swm-808-2017-04-11-114503959/555/555/2/roda-lacket-lossnus.png",
     "nicotineLevel": "8.5mg/g",
     "taste": "Traditionell",
     "contentWeight": "24",

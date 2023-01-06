@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
   <div class="card-header">
     {{ pageTitle }}
   </div>
@@ -32,9 +32,9 @@
         <tr
           *ngFor="let product of filteredProducts"
           class="table-row align-baseline"
-        >
-          <!-- [routerLink]="['/products', product.productId]" -->
-          <td>
+        > -->
+<!-- [routerLink]="['/products', product.productId]" -->
+<!-- <td>
             <img
               *ngIf="showImage"
               [src]="product.imageUrl"
@@ -71,5 +71,26 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div> -->
+<div class="product-container">
+  <div class="product-container__item" *ngFor="let product of filteredProducts">
+    <img
+      [src]="product.imageUrl"
+      [title]="product.productName"
+      [style.width.px]="260"
+      alt="product image"
+    />
+    <div>{{ product.productName }}</div>
+    <div>
+      1 dosa - {{ product.price }} kr
+      <button
+        type="button"
+        class="fa fa-cart-plus product-container__button"
+        (click)="handleAddToCart(product)"
+      >
+        Köp
+      </button>
+    </div>
   </div>
 </div>

@@ -15,30 +15,27 @@ import { ProductService } from './../../../services/product.service';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  constructor(
-    private _productService: ProductService,
-    private _shop: ShopService
-  ) {}
+
   public pageTitle: string = 'Products';
-  public imageWidth: number = 100;
-  public imageMargin: number = 2;
   public showImage: boolean = true;
   public errorMessage: string = '';
   public sub!: Subscription;
   public filteredProducts: IProduct[] = [];
   public products: IProduct[] = [];
   private _listFilter: string = '';
-
-
   get listFilter(): string {
     return this._listFilter;
   }
-
   set listFilter(value: string) {
     this._listFilter = value;
     console.log('In setter:', value);
     this.filteredProducts = this.performFilter(value);
   }
+
+  constructor(
+    private _productService: ProductService,
+    private _shop: ShopService
+  ) {}
 
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
