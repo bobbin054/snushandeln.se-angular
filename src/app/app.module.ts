@@ -9,9 +9,10 @@ import { ShopComponent } from './components/shop/shop.component';
 import { ShopModule } from './components/shop/shop.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CartPreviewComponent } from './components/cart-preview/cart-preview.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CartPreviewComponent],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,

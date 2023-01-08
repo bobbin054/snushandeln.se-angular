@@ -1,0 +1,31 @@
+.cart-preview {
+  display: grid;
+  grid-template-columns: 2fr 1fr 5fr;
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  border-bottom: 5px solid darkred;
+  cursor: pointer;
+  height: 50px;
+  align-content: center;
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+  }
+  &__left {
+    padding-right: 8px;
+  }
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.vl {
+  border-left: 5px solid darkred;
+}
+.mr-l {
+  margin-right: 16px;
+
+}
