@@ -19,6 +19,18 @@
     &:hover {
       background-color: #2f3336;
       border-radius: 3px;
+      // Spinning annomation
     }
+  }
+}
+.mongo {
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
