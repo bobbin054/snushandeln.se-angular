@@ -1,17 +1,17 @@
+$border-color: #d41920;
 .cart-preview {
   display: grid;
-  grid-template-columns: 2fr 1fr 5fr;
-  background-color: red;
+  grid-template-columns: 2fr 1fr 5fr 1fr;
+  background-color: #ed1c24;
   border-radius: 5px;
   color: white;
-  border-bottom: 5px solid darkred;
+  border-bottom: 5px solid $border-color;
   cursor: pointer;
   height: 50px;
   align-content: center;
+  align-items: center;
   &__left,
   &__right {
-    display: flex;
-    align-items: center;
     padding: 16px;
   }
   &__left {
@@ -23,9 +23,11 @@
   }
 }
 .vl {
-  border-left: 5px solid darkred;
+  border-left: 5px solid $border-color;
+  position: relative;
+  top: 1px;
+  height: 80%;
 }
 .mr-l {
   margin-right: 16px;
-
 }
