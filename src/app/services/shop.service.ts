@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { ReplaySubject, Subject } from 'rxjs';
 import { IProduct } from '../interface/product';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShopService {
-  public $productItemChanged = new Subject<IProduct>();
+  public $productItemChanged = new ReplaySubject<IProduct>();
 
   constructor() {}
 

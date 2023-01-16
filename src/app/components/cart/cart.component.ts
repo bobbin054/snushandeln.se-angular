@@ -15,7 +15,7 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
+export class CartComponent implements OnInit, AfterContentChecked {
   public productId: number | undefined;
   public productsInCart: IProductInCart[] = [];
 
@@ -40,10 +40,6 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
         }
       },
     });
-  }
-
-  ngOnDestroy(): void {
-    this._shopService.$productItemChanged.unsubscribe();
   }
 
   public removeFromCart(product: IProductInCart): void {
