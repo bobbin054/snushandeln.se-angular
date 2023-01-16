@@ -34,7 +34,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
   constructor(
     private _productService: ProductService,
     private _shop: ShopService
-  ) {}
+  ) {
+    
+  }
 
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShopService } from 'src/app/services/shop.service';
 import { IProduct } from '../../interface/product';
 
 @Component({
@@ -6,11 +7,10 @@ import { IProduct } from '../../interface/product';
   styleUrls: ['./shop.component.scss'],
 })
 export class ShopComponent {
-  public shoppingCartItems: IProduct[] = [];
-  constructor() {}
+  constructor(private readonly _shopService: ShopService) {}
 
   handleAddToCart(product: IProduct) {
-    this.shoppingCartItems.push(product);
+    this._shopService.addToCart(product)
     console.log('Added to cart');
   }
 }

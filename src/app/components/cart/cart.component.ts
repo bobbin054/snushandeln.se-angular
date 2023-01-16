@@ -15,7 +15,7 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit, AfterContentChecked {
+export class CartComponent implements AfterContentChecked {
   public productId: number | undefined;
   public productsInCart: IProductInCart[] = [];
 
@@ -23,45 +23,30 @@ export class CartComponent implements OnInit, AfterContentChecked {
     private _route: ActivatedRoute,
     private _productService: ProductService,
     private _shopService: ShopService
-  ) {}
-
-  ngOnInit(): void {
-    // this.productId = Number(this._route.snapshot.paramMap.get('id'));
-
-    this._shopService.$productItemChanged.subscribe({
-      next: (product) => {
-        const alreadyAddedProduct = this.productsInCart.find(
-          (p) => p.productName === product.productName
-        );
-        if (alreadyAddedProduct) {
-          alreadyAddedProduct.quantity++;
-        } else {
-          this.productsInCart.push({ ...product, quantity: 1 });
-        }
-      },
+  ) {
+    this._shopService.productsInCart$.subscribe((products) => {
+      this.productsInCart = products;
     });
   }
 
   public removeFromCart(product: IProductInCart): void {
-    this.productsInCart = this.productsInCart.filter((p) => p !== product);
+    this._shopService.removeFromCart(product);
   }
 
   public increaseQuantity(product: IProductInCart): void {
-    product.quantity++;
+    this._shopService.increaseQuantity(product);
   }
 
   public decreaseQuantity(product: IProductInCart): void {
-    product.quantity--;
+    this._shopService.decreaseQuantity(product);
+    console.log('Cart productis in cart: ', this.productsInCart);
   }
 
   public getTotalPrice(): number {
-    return this.productsInCart.reduce(
-      (prev, curr) => prev + curr.price * curr.quantity,
-      0
-    );
+    return this._shopService.getTotalPrice();
   }
 
   ngAfterContentChecked(): void {
-    this.productsInCart = this.productsInCart.filter((p) => p.quantity > 0);
+    // this.productsInCart = this.productsInCart.filter((p) => p.quantity > 0);
   }
 }
