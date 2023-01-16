@@ -19,12 +19,15 @@
     &:hover {
       background-color: #2f3336;
       border-radius: 3px;
-      // Spinning annomation
     }
   }
 }
 .mongo {
-  animation: spin 3s linear infinite;
+  animation-name: mongo;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 }
 @keyframes spin {
   from {
