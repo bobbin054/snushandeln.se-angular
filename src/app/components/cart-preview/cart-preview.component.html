@@ -1,8 +1,10 @@
 <div class="cart-preview">
   <div class="cart-preview__left">
-    <i class="fa fa-shopping-cart mr-l"></i>4
+    <i class="fa fa-shopping-cart mr-l">{{
+      this.shopService.countTotalQuantity()
+    }}</i>
   </div>
   <div class="vl"></div>
-  <div class="cart-preview__right"> 500 kr</div>
+  <div class="cart-preview__right">{{this.shopService.getTotalPrice()}} kr</div>
   <span class="fa fa-chevron-circle-right"></span>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShopService } from 'src/app/services/shop.service';
+import { CartService } from 'src/app/services/cart.service';
 import { IProduct } from '../../interface/product';
 
 @Component({
@@ -7,10 +7,10 @@ import { IProduct } from '../../interface/product';
   styleUrls: ['./shop.component.scss'],
 })
 export class ShopComponent {
-  constructor(private readonly _shopService: ShopService) {}
+  constructor(private readonly _cartService: CartService) {}
 
   handleAddToCart(product: IProduct) {
-    this._shopService.addToCart(product)
+    this._cartService.addToCart(product);
     console.log('Added to cart');
   }
 }

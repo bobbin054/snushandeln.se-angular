@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IProductInCart } from 'src/app/interface/product';
-import { ShopService } from 'src/app/services/shop.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'pm-cart-preview',
@@ -8,10 +8,12 @@ import { ShopService } from 'src/app/services/shop.service';
   styleUrls: ['./cart-preview.component.scss'],
 })
 export class CartPreviewComponent {
-
   public productsInCart: IProductInCart[] = [];
 
-  constructor(private _shopService: ShopService) {
-   
+  constructor(public shopService: CartService) {
+    this.shopService.productsInCart$.subscribe((products) => {
+      this.productsInCart = products;
+    });
+    this.shopService.countTotalQuantity();
   }
 }

@@ -6,7 +6,7 @@ import { IProduct, IProductInCart } from '../interface/product';
 @Injectable({
   providedIn: 'root',
 })
-export class ShopService {
+export class CartService {
   public productsInCart$ = new ReplaySubject<IProductInCart[]>();
   private _productsInCart: IProductInCart[] = [];
   private get productsInCart(): IProductInCart[] {
@@ -61,5 +61,9 @@ export class ShopService {
 
   public removeFromCart(product: IProductInCart): void {
     this.productsInCart = this.productsInCart.filter((p) => p !== product);
+  }
+
+  public countTotalQuantity(): number {
+    return this.productsInCart.reduce((prev, curr) => prev + curr.quantity, 0);
   }
 }

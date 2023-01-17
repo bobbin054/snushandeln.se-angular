@@ -1,29 +1,17 @@
-import {
-  AfterContentChecked,
-  AfterViewChecked,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ShopService } from 'src/app/services/shop.service';
-import { IProduct, IProductInCart } from '../../interface/product';
-import { ProductService } from '../../services/product.service';
+import { Component } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
+import { IProductInCart } from '../../interface/product';
 
 @Component({
   selector: 'pm-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements AfterContentChecked {
+export class CartComponent {
   public productId: number | undefined;
   public productsInCart: IProductInCart[] = [];
 
-  constructor(
-    private _route: ActivatedRoute,
-    private _productService: ProductService,
-    private _shopService: ShopService
-  ) {
+  constructor(private _shopService: CartService) {
     this._shopService.productsInCart$.subscribe((products) => {
       this.productsInCart = products;
     });
@@ -44,9 +32,5 @@ export class CartComponent implements AfterContentChecked {
 
   public getTotalPrice(): number {
     return this._shopService.getTotalPrice();
-  }
-
-  ngAfterContentChecked(): void {
-    // this.productsInCart = this.productsInCart.filter((p) => p.quantity > 0);
   }
 }

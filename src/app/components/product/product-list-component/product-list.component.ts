@@ -6,7 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ShopService } from 'src/app/services/shop.service';
+import { CartService } from 'src/app/services/cart.service';
 import { IProduct } from './../../../interface/product';
 import { ProductService } from './../../../services/product.service';
 @Component({
@@ -15,7 +15,6 @@ import { ProductService } from './../../../services/product.service';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-
   public pageTitle: string = 'Products';
   public showImage: boolean = true;
   public errorMessage: string = '';
@@ -33,10 +32,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   constructor(
     private _productService: ProductService,
-    private _shop: ShopService
-  ) {
-    
-  }
+    private _cartService: CartService
+  ) {}
 
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -72,6 +69,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   handleAddToCart(product: IProduct) {
-    this._shop.addToCart(product);
+    this._cartService.addToCart(product);
   }
 }
