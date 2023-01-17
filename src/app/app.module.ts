@@ -5,28 +5,26 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome-component/welcome.component';
 import { CartComponent } from './components/cart/cart.component';
-import { ShopComponent } from './components/shop/shop.component';
-import { ShopModule } from './components/shop/shop.module';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CartPreviewComponent } from './components/cart-preview/cart-preview.component';
+import { CartPreviewComponent } from './components/cart/cart-preview/cart-preview.component';
+import { ProductListComponent } from './components/product/product-list-component/product-list.component';
+import { ProductModule as ProductsModule } from './components/product/product.module';
 
 @NgModule({
-  declarations: [AppComponent, CartPreviewComponent],
+  declarations: [AppComponent, CartPreviewComponent, CartComponent],
   bootstrap: [AppComponent],
   imports: [
-    BrowserModule,
-    CommonModule,
-    HttpClientModule,
-    ShopModule,
-    FormsModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'shop', component: ShopComponent },
+      { path: 'products', component: ProductListComponent },
       { path: 'shopping-cart', component: CartComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
     ]),
+    BrowserModule,
+    CommonModule,
+    HttpClientModule,
+    ProductsModule,
   ],
 })
 export class AppModule {}

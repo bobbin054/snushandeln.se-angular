@@ -7,6 +7,7 @@ import { ProductDetailGuard } from '../../guards/product-detail.guard';
 import { CommonModule } from '@angular/common';
 import { StarComponent } from '../star-component/star.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
         canActivate: [ProductDetailGuard],
       },
     ]),
+    BrowserModule,
     CommonModule,
     FormsModule,
   ],
