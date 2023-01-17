@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome-component/welcome.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CommonModule } from '@angular/common';
-import { CartPreviewComponent } from './components/cart/cart-preview/cart-preview.component';
 import { ProductListComponent } from './components/product/product-list-component/product-list.component';
-import { ProductModule as ProductsModule } from './components/product/product.module';
+import { ProductsModule as ProductsModule } from './components/product/products.module';
+import { CartModule } from './components/cart/cart.module';
 
 @NgModule({
-  declarations: [AppComponent, CartPreviewComponent, CartComponent],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   imports: [
     RouterModule.forRoot([
@@ -25,6 +25,7 @@ import { ProductModule as ProductsModule } from './components/product/product.mo
     CommonModule,
     HttpClientModule,
     ProductsModule,
+    CartModule,
   ],
 })
 export class AppModule {}

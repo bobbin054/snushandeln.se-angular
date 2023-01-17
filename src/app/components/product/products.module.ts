@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
-import { ConvertToSpacesPipe } from '../../pipes/convert-to-spaces.pipe';
 import { ProductDetailComponent } from './product-detail-component/product-detail.component';
 import { ProductListComponent } from './product-list-component/product-list.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from '../../guards/product-detail.guard';
 import { CommonModule } from '@angular/common';
-import { StarComponent } from '../star-component/star.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+const components = [ProductListComponent, ProductDetailComponent];
+
 @NgModule({
-  declarations: [
-    ProductListComponent,
-    ProductDetailComponent,
-    ConvertToSpacesPipe,
-    StarComponent,
-  ],
+  declarations: [components],
   imports: [
     RouterModule.forChild([
       {
@@ -32,6 +27,6 @@ import { BrowserModule } from '@angular/platform-browser';
     CommonModule,
     FormsModule,
   ],
-  exports: [ProductListComponent, ProductDetailComponent],
+  exports: [components],
 })
-export class ProductModule {}
+export class ProductsModule {}
