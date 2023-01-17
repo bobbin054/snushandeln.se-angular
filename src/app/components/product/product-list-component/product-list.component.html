@@ -12,7 +12,7 @@
       <button
         type="button"
         class="fa fa-cart-plus product-container__button"
-        (click)="handleAddToCart(product)"
+        (click)="this.cartService.addToCart(product)"
       >
         Add to cart
       </button>

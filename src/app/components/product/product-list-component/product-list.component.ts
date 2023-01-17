@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { IProduct } from './../../../interface/product';
@@ -17,7 +11,6 @@ import { ProductService } from './../../../services/product.service';
 export class ProductListComponent implements OnInit, OnDestroy {
   public pageTitle: string = 'Products';
   public showImage: boolean = true;
-  public errorMessage: string = '';
   public sub!: Subscription;
   public filteredProducts: IProduct[] = [];
   public products: IProduct[] = [];
@@ -32,43 +25,42 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   constructor(
     private _productService: ProductService,
-    private _cartService: CartService
+    public cartService: CartService
   ) {}
 
-  performFilter(filterBy: string): IProduct[] {
+  public performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.products.filter((product: IProduct) =>
       product.productName.toLocaleLowerCase().includes(filterBy)
     );
   }
 
-  toggleImage(): void {
+  public toggleImage(): void {
     this.showImage = !this.showImage;
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.sub = this._productService.getProducts().subscribe({
       next: (products) => {
         this.products = products;
         this.filteredProducts = products;
       },
-      error: (err) => (this.errorMessage = err),
+      error: (err) => {
+        console.log(err);
+        throw err;
+      },
     });
   }
 
-  onAddToCartClicked(message1: any): void {
+  public onAddToCartClicked(message1: any): void {
     console.log('ProductListComponent: ' + JSON.stringify(message1));
   }
 
-  onRatingClicked(message: string): void {
+  public onRatingClicked(message: string): void {
     this.pageTitle = 'Product List: ' + message;
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.sub.unsubscribe();
-  }
-
-  handleAddToCart(product: IProduct) {
-    this._cartService.addToCart(product);
   }
 }
