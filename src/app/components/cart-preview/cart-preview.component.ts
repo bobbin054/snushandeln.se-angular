@@ -10,10 +10,10 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartPreviewComponent {
   public productsInCart: IProductInCart[] = [];
 
-  constructor(public shopService: CartService) {
-    this.shopService.productsInCart$.subscribe((products) => {
+  constructor(public cartService: CartService) {
+    this.cartService.productsInCart$.subscribe((products) => {
       this.productsInCart = products;
     });
-    this.shopService.countTotalQuantity();
+    this.cartService.countTotalQuantity();
   }
 }
