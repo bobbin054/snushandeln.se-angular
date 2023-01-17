@@ -1,10 +1,11 @@
 <div class="cart-preview">
-  <div class="cart-preview__left">
-    <i class="fa fa-shopping-cart mr-l">{{
-      this.shopService.countTotalQuantity()
-    }}</i>
+  <div class="cart-preview__left mr-l">
+    <i class="fa fa-shopping-cart"></i>
+    {{ this.shopService.countTotalQuantity() }}
   </div>
   <div class="vl"></div>
-  <div class="cart-preview__right">{{this.shopService.getTotalPrice()}} kr</div>
+  <div class="cart-preview__right">
+    {{ this.shopService.getTotalPrice() }} kr
+  </div>
   <span class="fa fa-chevron-circle-right"></span>
 </div>
