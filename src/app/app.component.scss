@@ -26,10 +26,10 @@
   animation-name: mongo;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: normal;
   animation-timing-function: linear;
 }
-@keyframes spin {
+@keyframes mongo {
   from {
     transform: rotate(0deg);
   }
